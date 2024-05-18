@@ -9,7 +9,6 @@ const BarChart = ({ data }) => {
 
   useEffect(() => {
     am4core.useTheme(am4themes_animated);
-    
     const sortedData = [...data].sort((a, b) => {
       const monthsOrder = {
         "January": 1,
