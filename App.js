@@ -1,4 +1,3 @@
-// /src/App.js
 import React, { useState, useEffect } from 'react';
 import GenderPieChart from './GenderPieChart';
 import TopBar from './Components/TopBar';
@@ -26,7 +25,6 @@ function App() {
           if (rowData.length > Math.max(sexIndex, dobIndex) && rowData[sexIndex] && rowData[dobIndex]) { 
             const sex = rowData[sexIndex].toLowerCase();
             const dateOfBirth = rowData[dobIndex];
-            // Validate the date format (simple YYYY-MM-DD check)
             const dateParts = dateOfBirth.split("-");
             if (dateParts.length === 3 && !isNaN(Date.parse(dateOfBirth))) {
               people.push({ sex, dateOfBirth });
@@ -41,9 +39,12 @@ function App() {
   return (
     <div className="App">
       <TopBar />
-      <GenderPieChart data={peopleData} />
+      <div className="content">
+        <GenderPieChart data={peopleData} />
+      </div>
     </div>
   );
 }
 
 export default App;
+
